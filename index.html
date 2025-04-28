@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #webchat {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #weatherResponse {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        #date-time {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        #getWeatherBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #getWeatherBtn:hover {
+            background-color: #45a049;
+        }
+
+        #cityInput {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Weather Chatbot</h1>
+            <p>Enter a city to get the weather forecast and more!</p>
+        </div>
+
+        <!-- Display the current date and time -->
+        <div id="date-time"></div>
+
+        <!-- Chatbot container -->
+        <div id="webchat"></div>
+
+        <div class="input-container">
+            <label for="cityInput">Enter city name:</label>
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="getWeatherBtn">Get Weather</button>
+        </div>
+
+        <!-- Weather information -->
+        <div id="weatherResponse"></div>
+    </div>
+
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
