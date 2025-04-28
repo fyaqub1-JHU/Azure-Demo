@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Weather App</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #weather-info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        #webchat {
+            height: 500px;
+            width: 100%;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Smart Weather App</h1>
+
+    <form id="weather-form">
+        <input type="text" id="city" placeholder="Enter city name" required />
+        <button type="submit">Get Weather</button>
+    </form>
+
+    <div id="weather-info"></div>
+
+    <h2>Chat with WeatherBot</h2>
+    <div id="webchat"></div>
+
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script>
+      const { createDirectLine, renderWebChat } = window.WebChat;
+
+      const directLine = createDirectLine({
+        token: 'AkzEGehmlKL6BV0ws72cp5aaRm0SpFE70BaIOY8olOnHpQcoRWUfJQQJ99BDAC24pbEAArohAAABAZBS3ErH.5vbPLq8Cw5P5XA28rOIIMvQ0C4ZCpxl8LivYbCJ5GEuhvmELdn65JQQJ99BDAC24pbEAArohAAABAZBS1jsC'
+      });
+
+      renderWebChat(
+        {
+          directLine,
+          userID: 'user1',
+          username: 'User',
+          botAvatarInitials: 'WB',
+          userAvatarInitials: 'ME',
+        },
+        document.getElementById('webchat')
+      );
+    </script>
+
+</body>
+</html>
